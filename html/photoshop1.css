@@ -1,0 +1,208 @@
+/* Reset CSS */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Базові стилі */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    overflow-x: hidden; /* Щоб уникнути горизонтальної прокрутки */
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #6a0dad;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1s ease;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: #fff; /* Колір тексту встановлено на білий */
+    font-family: 'Oswald', sans-serif; /* Застосовано Google Font 'Oswald' */
+    font-weight: 700; /* Підсилено товщину шрифту */
+    letter-spacing: 2px; /* Додано міжсимвольний інтервал */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Тінь для кращої читабельності на світлому фоні */
+}
+
+main {
+    padding: 20px 0;
+    animation: fadeIn 1s ease;
+}
+
+.services {
+    background-color: #fff;
+    padding: 40px 0;
+    border-top: 2px solid #6a0dad;
+    border-bottom: 2px solid #6a0dad;
+    animation: fadeInUp 1s ease;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #6a0dad;
+}
+
+.services-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    width: calc(33.33% - 40px);
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    animation: float 6s infinite alternate; /* Збільшено тривалість анімації до 6 секунд */
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-item:hover::before {
+    opacity: 0.5;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.service-item p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.order-btn {
+    background-color: #6a0dad;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-btn:hover {
+    background-color: #4e0872;
+    transform: scale(1.05); /* Збільшення кнопки при наведенні */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    animation: fadeInUp 1s ease;
+}
+
+/* Анімації */
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsive design */
+
+@media (max-width: 1024px) {
+    .service-item {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .service-item {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 576px) {
+    .service-item {
+        width: 100%;
+    }
+}
